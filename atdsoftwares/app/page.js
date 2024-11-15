@@ -441,13 +441,13 @@ export default function ATDSoftwareLanding() {
           </div>
           <div className="flex justify-center space-x-4 text-sm font-bold">
             <Link
-              href="/privacy-policy"
+              href="/Privacy-Policy"
               className="hover:text-yellow-300 transition-colors duration-300 uppercase"
             >
               Privacy Policy
             </Link>
             <Link
-              href="/terms-and-conditions"
+              href="/Terms"
               className="hover:text-yellow-300 transition-colors duration-300 uppercase"
             >
               Terms and Conditions
