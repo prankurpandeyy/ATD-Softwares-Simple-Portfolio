@@ -93,8 +93,8 @@ export default function ATDSoftwareLanding() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 text-white">
-      <header className="sticky top-0 z-50 bg-white bg-opacity-10 backdrop-blur-md shadow-lg">
+    <div className="min-h-screen bg-yellow-300 text-black">
+      <header className="sticky top-0 z-50 bg-blue-500 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
         <nav className="container mx-auto px-6 py-4">
           <ul className="flex justify-center space-x-6">
             {[
@@ -109,14 +109,14 @@ export default function ATDSoftwareLanding() {
               <li key={section}>
                 <Button
                   variant="ghost"
-                  className={`text-sm font-medium transition-colors duration-300 ${
+                  className={`text-sm font-bold uppercase transition-transform duration-300 ${
                     activeSection === section
-                      ? "text-yellow-400"
-                      : "text-white hover:text-yellow-200"
+                      ? "bg-yellow-300 text-black border-2 border-black transform translate-x-[-2px] translate-y-[-2px]"
+                      : "text-white hover:bg-yellow-300 hover:text-black"
                   }`}
                   onClick={() => scrollToSection(section)}
                 >
-                  {section.charAt(0).toUpperCase() + section.slice(1)}
+                  {section}
                 </Button>
               </li>
             ))}
@@ -127,32 +127,30 @@ export default function ATDSoftwareLanding() {
       <main>
         <section
           id="hero"
-          className="py-32 text-center relative overflow-hidden"
+          className="py-32 bg-pink-400 border-b-4 border-black"
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 opacity-75"></div>
-          <div className="container mx-auto px-6 relative z-10">
-            <h1 className="text-6xl font-bold mb-4 animate-fade-in-up">
+          <div className="container mx-auto px-6">
+            <h1 className="text-6xl font-black mb-4 uppercase">
               Welcome to ATD Software
             </h1>
-            <p className="text-2xl mb-8 animate-fade-in-up animation-delay-300">
+            <p className="text-2xl mb-8 font-bold">
               Innovative Solutions for Your Business
             </p>
             <Button
               onClick={() => scrollToSection("services")}
-              className="bg-yellow-400 text-gray-900 hover:bg-yellow-300 transition-colors duration-300 text-lg py-6 px-10 rounded-full animate-fade-in-up animation-delay-600"
+              className="bg-blue-500 text-white hover:bg-blue-600 transition-transform duration-300 text-lg py-6 px-10 uppercase font-bold border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[8px] hover:translate-y-[8px]"
             >
               Explore Our Services
             </Button>
           </div>
-          <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-transparent to-blue-600 opacity-25"></div>
         </section>
 
         <section
           id="about"
-          className="py-20 bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg"
+          className="py-20 bg-green-400 border-b-4 border-black"
         >
           <div className="container mx-auto px-6">
-            <h2 className="text-4xl font-bold mb-12 text-center">About Us</h2>
+            <h2 className="text-4xl font-black mb-12 uppercase">About Us</h2>
             <div className="flex flex-col md:flex-row items-center justify-between">
               <div className="md:w-1/2 mb-6 md:mb-0">
                 <Image
@@ -160,16 +158,16 @@ export default function ATDSoftwareLanding() {
                   alt="About ATD Software"
                   width={500}
                   height={300}
-                  className="rounded-lg shadow-2xl hover:shadow-yellow-300/50 transition-shadow duration-300"
+                  className="border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]"
                 />
               </div>
               <div className="md:w-1/2 md:pl-12">
-                <p className="text-xl mb-6 leading-relaxed">
+                <p className="text-xl mb-6 font-bold">
                   ATD Software is a leading provider of innovative software
                   solutions. We specialize in creating cutting-edge applications
                   that help businesses thrive in the digital age.
                 </p>
-                <p className="text-xl leading-relaxed">
+                <p className="text-xl font-bold">
                   Our team of expert developers and designers are committed to
                   delivering high-quality, tailored solutions that meet the
                   unique needs of each client.
@@ -179,9 +177,12 @@ export default function ATDSoftwareLanding() {
           </div>
         </section>
 
-        <section id="services" className="py-20">
+        <section
+          id="services"
+          className="py-20 bg-purple-400 border-b-4 border-black"
+        >
           <div className="container mx-auto px-6">
-            <h2 className="text-4xl font-bold mb-12 text-center">
+            <h2 className="text-4xl font-black mb-12 uppercase">
               Our Services
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -189,15 +190,15 @@ export default function ATDSoftwareLanding() {
                 (service, index) => (
                   <Card
                     key={index}
-                    className="bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg hover:shadow-xl transition-shadow duration-300 border-none"
+                    className="bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]"
                   >
                     <CardHeader>
-                      <CardTitle className="text-2xl font-bold text-yellow-400">
+                      <CardTitle className="text-2xl font-black uppercase">
                         {service}
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-lg">
+                      <p className="text-lg font-bold">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Sed do eiusmod tempor incididunt ut labore et dolore
                         magna aliqua.
@@ -212,18 +213,18 @@ export default function ATDSoftwareLanding() {
 
         <section
           id="work"
-          className="py-20 bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg"
+          className="py-20 bg-orange-400 border-b-4 border-black"
         >
           <div className="container mx-auto px-6">
-            <h2 className="text-4xl font-bold mb-12 text-center">Our Work</h2>
+            <h2 className="text-4xl font-black mb-12 uppercase">Our Work</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {projects.map((project) => (
                 <Card
                   key={project.id}
-                  className="bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 border-none"
+                  className="bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]"
                 >
                   <CardHeader>
-                    <CardTitle className="text-2xl font-bold text-yellow-400">
+                    <CardTitle className="text-2xl font-black uppercase">
                       {project.title}
                     </CardTitle>
                   </CardHeader>
@@ -233,7 +234,7 @@ export default function ATDSoftwareLanding() {
                       alt={project.title}
                       width={300}
                       height={200}
-                      className="rounded-lg"
+                      className="border-2 border-black"
                     />
                   </CardContent>
                   <CardFooter>
@@ -242,7 +243,7 @@ export default function ATDSoftwareLanding() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <Button className="bg-yellow-400 text-gray-900 hover:bg-yellow-300 transition-colors duration-300">
+                      <Button className="bg-blue-500 text-white hover:bg-blue-600 transition-transform duration-300 uppercase font-bold border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px]">
                         View Project
                       </Button>
                     </Link>
@@ -253,9 +254,12 @@ export default function ATDSoftwareLanding() {
           </div>
         </section>
 
-        <section id="testimonial" className="py-20">
+        <section
+          id="testimonial"
+          className="py-20 bg-red-400 border-b-4 border-black"
+        >
           <div className="container mx-auto px-6">
-            <h2 className="text-4xl font-bold mb-12 text-center">
+            <h2 className="text-4xl font-black mb-12 uppercase">
               Client Testimonials
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -273,18 +277,20 @@ export default function ATDSoftwareLanding() {
               ].map((testimonial, index) => (
                 <Card
                   key={index}
-                  className="bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 border-none"
+                  className="bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]"
                 >
                   <CardHeader>
-                    <CardTitle className="text-2xl font-bold text-yellow-400">
+                    <CardTitle className="text-2xl font-black uppercase">
                       {testimonial.name}
                     </CardTitle>
-                    <CardDescription className="text-white opacity-75">
+                    <CardDescription className="text-lg font-bold">
                       {testimonial.company}
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-lg italic">"{testimonial.text}"</p>
+                    <p className="text-lg italic font-bold">
+                      "{testimonial.text}"
+                    </p>
                   </CardContent>
                 </Card>
               ))}
@@ -294,10 +300,10 @@ export default function ATDSoftwareLanding() {
 
         <section
           id="pricing"
-          className="py-20 bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg"
+          className="py-20 bg-cyan-400 border-b-4 border-black"
         >
           <div className="container mx-auto px-6">
-            <h2 className="text-4xl font-bold mb-12 text-center">
+            <h2 className="text-4xl font-black mb-12 uppercase">
               Pricing Plans
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -329,25 +335,25 @@ export default function ATDSoftwareLanding() {
               ].map((plan, index) => (
                 <Card
                   key={index}
-                  className="bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 border-none"
+                  className="bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]"
                 >
                   <CardHeader>
-                    <CardTitle className="text-2xl font-bold text-yellow-400">
+                    <CardTitle className="text-2xl font-black uppercase">
                       {plan.name}
                     </CardTitle>
-                    <CardDescription className="text-white text-xl">
+                    <CardDescription className="text-xl font-bold">
                       {plan.price}
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <ul className="list-disc list-inside text-lg">
+                    <ul className="list-disc list-inside text-lg font-bold">
                       {plan.features.map((feature, i) => (
                         <li key={i}>{feature}</li>
                       ))}
                     </ul>
                   </CardContent>
                   <CardFooter>
-                    <Button className="w-full bg-yellow-400 text-gray-900 hover:bg-yellow-300 transition-colors duration-300">
+                    <Button className="w-full bg-blue-500 text-white hover:bg-blue-600 transition-transform duration-300 uppercase font-bold border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px]">
                       Choose Plan
                     </Button>
                   </CardFooter>
@@ -357,9 +363,9 @@ export default function ATDSoftwareLanding() {
           </div>
         </section>
 
-        <section id="faq" className="py-20">
+        <section id="faq" className="py-20 bg-lime-400 border-b-4 border-black">
           <div className="container mx-auto px-6">
-            <h2 className="text-4xl font-bold mb-12 text-center">
+            <h2 className="text-4xl font-black mb-12 uppercase">
               Frequently Asked Questions
             </h2>
             <Accordion
@@ -388,12 +394,12 @@ export default function ATDSoftwareLanding() {
                 <AccordionItem
                   key={index}
                   value={`item-${index}`}
-                  className="border-b border-white border-opacity-20"
+                  className="border-4 border-black mb-4"
                 >
-                  <AccordionTrigger className="text-lg hover:text-yellow-400 transition-colors duration-300">
+                  <AccordionTrigger className="text-lg font-black uppercase hover:bg-yellow-300 px-4">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-white text-opacity-75">
+                  <AccordionContent className="bg-white p-4 font-bold">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
@@ -403,50 +409,46 @@ export default function ATDSoftwareLanding() {
         </section>
       </main>
 
-      <footer className="bg-gray-900 text-white py-12">
+      <footer className="bg-gray-900 text-white py-12 border-t-4 border-black">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center mb-8">
             <div className="mb-4 md:mb-0">
-              <h3 className="text-3xl font-bold mb-2">ATD Software</h3>
-              <p className="text-lg">Innovative Solutions for Your Business</p>
+              <h3 className="text-3xl font-black uppercase mb-2">
+                ATD Software
+              </h3>
+              <p className="text-lg font-bold">
+                Innovative Solutions for Your Business
+              </p>
             </div>
             <div className="flex space-x-6">
-              <Link href="#" aria-label="Facebook">
-                <Facebook className="h-6 w-6 hover:text-yellow-400 transition-colors duration-300" />
-              </Link>
-              <Link href="#" aria-label="Twitter">
-                <Twitter className="h-6 w-6 hover:text-yellow-400 transition-colors duration-300" />
-              </Link>
-              <Link href="#" aria-label="Instagram">
-                <Instagram className="h-6 w-6 hover:text-yellow-400 transition-colors duration-300" />
-              </Link>
-              <Link href="#" aria-label="LinkedIn">
-                <Linkedin className="h-6 w-6 hover:text-yellow-400 transition-colors duration-300" />
-              </Link>
-              <Link href="#" aria-label="GitHub">
-                <Github className="h-6 w-6 hover:text-yellow-400 transition-colors duration-300" />
-              </Link>
+              {[Facebook, Twitter, Instagram, Linkedin, Github].map(
+                (Icon, index) => (
+                  <Link key={index} href="#" aria-label={Icon.name}>
+                    <Icon className="h-8 w-8 hover:text-yellow-300 transition-colors duration-300" />
+                  </Link>
+                )
+              )}
             </div>
           </div>
           <div className="text-center mb-8">
-            <p className="mb-2 text-lg">Contact Us:</p>
-            <p className="flex items-center justify-center text-lg">
+            <p className="mb-2 text-lg font-bold">Contact Us:</p>
+            <p className="flex items-center justify-center text-lg font-bold">
               <Mail className="mr-2" /> info@atdsoftware.com
             </p>
-            <p className="flex items-center justify-center text-lg">
+            <p className="flex items-center justify-center text-lg font-bold">
               <Phone className="mr-2" /> +1 (123) 456-7890
             </p>
           </div>
-          <div className="flex justify-center space-x-4 text-sm text-gray-400">
+          <div className="flex justify-center space-x-4 text-sm font-bold">
             <Link
               href="/privacy-policy"
-              className="hover:text-yellow-400 transition-colors duration-300"
+              className="hover:text-yellow-300 transition-colors duration-300 uppercase"
             >
               Privacy Policy
             </Link>
             <Link
               href="/terms-and-conditions"
-              className="hover:text-yellow-400 transition-colors duration-300"
+              className="hover:text-yellow-300 transition-colors duration-300 uppercase"
             >
               Terms and Conditions
             </Link>
