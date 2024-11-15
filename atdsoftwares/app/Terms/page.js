@@ -91,7 +91,7 @@ export default function TermsAndConditions() {
               <Mail className="mr-2" /> info@atdsoftware.com
             </p>
             <p className="flex items-center justify-center text-lg font-bold">
-              <Phone className="mr-2" /> +1 (123) 456-7890
+              <Phone className="mr-2" /> +91-7580909961
             </p>
           </div>
           <div className="flex justify-center space-x-4 text-sm font-bold">
